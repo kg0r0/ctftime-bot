@@ -1,2 +1,3 @@
 # ctftime-bot
-:flags:  This is a bot to notify ctf dates.
+[![CircleCI](https://circleci.com/gh/kg0r0/ctftime-bot.svg?style=svg)](https://circleci.com/gh/kg0r0/ctftime-bot)  
+:flags:  This is a bot for notifying ctf date to slack.
