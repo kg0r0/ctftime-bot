@@ -12,8 +12,8 @@ type Config struct {
 
 // SlackConfig is ...
 type SlackConfig struct {
-	AccessToken string `json:"access_token"`
-	ChannelID   string `json:"channel_id"`
+	APIToken  string `json:"api_token"`
+	ChannelID string `json:"channel_id"`
 }
 
 // NewConfig is ...

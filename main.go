@@ -15,14 +15,14 @@ func main() {
 	if err != nil {
 		log.Fatal("Can not read config file!")
 	}
-	if config.SlackConfig.AccessToken == "" {
+	if config.SlackConfig.APIToken == "" {
 		log.Fatal("Can not find AccessToken!")
 	}
-	t := flag.String("t", config.SlackConfig.AccessToken, "access token")
+	t := flag.String("t", config.SlackConfig.APIToken, "api token")
 	c := flag.String("c", config.SlackConfig.ChannelID, "channel id")
 	flag.Parse()
 	if len(*t) == 0 {
-		log.Fatal("AccessToken is Invalid!")
+		log.Fatal("APIToken is Invalid!")
 	}
 
 	if len(*c) == 0 {
