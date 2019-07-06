@@ -1,7 +1,8 @@
 package ctftime
 
 import (
-	"encoding/json"
+	"errors"
+	"net/http"
 	"testing"
 
 	"github.com/jarcoal/httpmock"
@@ -16,8 +17,10 @@ func TestUnmarshalCtfInfo(t *testing.T) {
 		"https://ctftime.org/api/v1/events/",
 		httpmock.NewStringResponder(200, testJSON),
 	)
-	info := GetInfo()
-	json.Unmarshal([]byte(testJSON), &info)
+	info, err := GetInfo()
+	if err != nil {
+		t.Errorf("Get ctftime info error %v", err)
+	}
 
 	type testCase struct {
 		Name string
@@ -45,7 +48,24 @@ func TestUnmarshalCtfInfo(t *testing.T) {
 
 	for _, test := range testCases {
 		if test.Test != test.Want {
-			t.Errorf("erro ctf info unmarshal error (%v) :%v != %v", test.Name, test.Test, test.Want)
+			t.Errorf("Get ctftime info error (%v) :%v != %v", test.Name, test.Test, test.Want)
 		}
 	}
+}
+
+func TestGetInfoError(t *testing.T) {
+	httpmock.Activate()
+	defer httpmock.DeactivateAndReset()
+	httpmock.RegisterResponder(
+		"GET",
+		"https://ctftime.org/api/v1/events/",
+		func(req *http.Request) (*http.Response, error) {
+			return nil, errors.New("")
+		},
+	)
+	info, err := GetInfo()
+	if err == nil {
+		t.Errorf("Get ctftime info error %v", info)
+	}
+
 }

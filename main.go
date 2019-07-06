@@ -29,7 +29,10 @@ func main() {
 		log.Fatal("ChannelID is Invalid!")
 	}
 
-	info := ctftime.GetInfo()
+	info, err := ctftime.GetInfo()
+	if err != nil {
+		log.Fatal(err)
+	}
 	contents := []string{}
 	for _, i := range info {
 		contents = append(contents, fmt.Sprintf("[%s](%s)\n *start* : %s\n *finish* :%s\n", i.Title, i.URL, i.Start, i.Finish))
