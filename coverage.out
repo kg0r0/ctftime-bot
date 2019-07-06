@@ -1,0 +1,14 @@
+mode: atomic
+github.com/kg0r0/ctftime-bot/ctftime/info.go:44.35,52.16 8 1
+github.com/kg0r0/ctftime-bot/ctftime/info.go:55.2,58.16 4 1
+github.com/kg0r0/ctftime-bot/ctftime/info.go:61.2,64.16 3 1
+github.com/kg0r0/ctftime-bot/ctftime/info.go:67.2,69.18 3 1
+github.com/kg0r0/ctftime-bot/ctftime/info.go:52.16,54.3 1 0
+github.com/kg0r0/ctftime-bot/ctftime/info.go:58.16,60.3 1 0
+github.com/kg0r0/ctftime-bot/ctftime/info.go:64.16,66.3 1 0
+github.com/kg0r0/ctftime-bot/ctftime/conf.go:20.52,24.2 3 3
+github.com/kg0r0/ctftime-bot/ctftime/conf.go:26.59,28.16 2 3
+github.com/kg0r0/ctftime-bot/ctftime/conf.go:31.2,32.16 2 2
+github.com/kg0r0/ctftime-bot/ctftime/conf.go:35.2,35.12 1 1
+github.com/kg0r0/ctftime-bot/ctftime/conf.go:28.16,30.3 1 1
+github.com/kg0r0/ctftime-bot/ctftime/conf.go:32.16,34.3 1 1

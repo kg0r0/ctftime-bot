@@ -35,7 +35,7 @@ func main() {
 	}
 	contents := []string{}
 	for _, i := range info {
-		contents = append(contents, fmt.Sprintf("[%s](%s)\n *start* : %s\n *finish* :%s\n", i.Title, i.URL, i.Start, i.Finish))
+		contents = append(contents, fmt.Sprintf(":trophy: *%s* \n *url* : %s\n *format* : %s\n *start* : %s\n *finish* :%s\n", i.Title, i.URL, i.Format, i.Start.Local(), i.Finish.Local()))
 	}
 	api := slack.New(*t)
 	attachment := slack.Attachment{
