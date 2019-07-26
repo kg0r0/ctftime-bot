@@ -41,7 +41,7 @@ func main() {
 	attachment := slack.Attachment{
 		Text: strings.Join(contents[:], "\n"),
 	}
-	channelID, timestamp, err := api.PostMessage(*c, slack.MsgOptionText("直近2週間のCTF", false), slack.MsgOptionAttachments(attachment))
+	channelID, timestamp, err := api.PostMessage(*c, slack.MsgOptionText("Upcoming events", false), slack.MsgOptionAttachments(attachment))
 	if err != nil {
 		fmt.Printf("%s\n", err)
 		return
