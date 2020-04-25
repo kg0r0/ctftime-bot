@@ -32,3 +32,12 @@ jobs:
 
     - name: Build
       run: go build -v .
+    
+    - name: Test
+      run: go test -v -race -cover -coverprofile=coverage.out ./...
+    
+    - name: Upload binary
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: ctftime-bot
+        path: ctftime-bot
